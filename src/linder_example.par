@@ -1,0 +1,142 @@
+# Example parameter file created, 2004-10-08
+#
+
+# Specify the range for the grid search and the number of steps. If
+# 'start' and 'end' have the same values and if 'nr.steps' is 1, the
+# program assumes the this parameter should not be part of the fit
+# (also in Davidon, Powell and Genetic) and instead locked to the 'start'-value.
+# name  start  end   nr.
+
+# Parameters for fitting standard cosmology
+#
+W0      -1.5    -0.5    1
+W1       0.0   0.0      1
+OMEGAM   0.0   1.0   50
+OMEGAX   0.7   0.7   1 
+SCRIPTM -3.9  -3.2   50 
+
+# Fit w(z)=L1+L2*z/(1+z) parametrization
+DOLINDER 1.
+L1    -1.5  -0.5   50
+L2    -2.0  2.0   50
+
+# If the magnitudes have not been corrected for stretch and
+# this data is in the input file, ALPHA should also be fitted
+# otherwise set ALPHA to 0.
+#ALPHA   -4.0   1.0   50 
+ALPHA   0.0   0.0   1
+
+# Add prior from Baryon oscillations (see Eisenstein et al, 2005)
+DOBOS    0.
+BOSPRI   0.472
+DBOSPR   0.017
+
+# Add prior from CMB (see Spergel et al, 2006)
+DOCMB    0.
+BOSPRI   1.72
+DBOSPR   0.031
+
+
+# Fit X-dim cosmology
+#
+XDIM 0.
+  OMEGARC  0.0   1.0   100
+  XDA      1.0   1.0   1
+# Fitting the Alam et al. metamorphosis parametrisation (see astro-ph/0404468)
+#
+DOJACKE 0.
+  A1      -10.0 10.0   1
+  A2      -10.0 10.0   1
+  AINV     0.0   0.0   1
+  A4       0.0   0.0   1
+
+# Parameters for fitting EOS according to Hannestad parametrization,
+# i.e. when DOHP has been set (see astro-ph/0407259)
+#
+DOHP 0.
+  WLT      0.0   0.0   1
+  WET      0.0   0.0   1
+  QHP      0.0   0.0   1
+  ZX       0.0   0.0   1
+
+# Do time separation fit of multiple images (see 2002A&A...393...25G).
+#
+DOMULTI 0.
+  HUBBLE0  0.5   0.5   1 # parameter range for fitting H_0
+# JBANDMAX  28.          # the faintness limit of discovery in J-band
+  IBANDMAX  28.          # the faintness limit of discovery in I-band
+  LENSTYPE    SIS        # which lens model? SIS or compact objects (POI)
+  ETIMEDELAY  1.0        # uncertainty in days for the time delay
+  EIMSEP      0.1        # uncertainty in arcsecs for the image sep.
+  EIMRAT      0.1        # uncertainty between the ratio
+  EZL         0.1
+  EMODEL      0.05
+  EVEL        0.
+
+# Uncomment to fit the alpha in the Peebles-Ratra potential
+# (see 2002PhRvD..66b3530E)
+#
+#QALPHA   0.0   1.0   10
+#WCUBEFILE wcube.dat # File needed for fitting QALPHA
+
+# Uncomment to only use the first XX number of supernovae from the
+# data sample.
+#
+#NRSNE 100.
+
+# Uncomment to only consider data within the given redshift range
+#ZRANGE 0.0 0.2
+
+# The intrinsic magnitude uncertainty that should be assumed
+# for the fit
+#
+GAUSSERROR  0.001
+
+# Should the intrinsic dispersion be subtracted (from a SNOC
+# simulated sample).
+#
+SUBINTSIG 0.
+
+# Should the simulated lensing effects be added to the SN
+# magnitudes (for a SNOC simulated sample).
+#
+LENSEFFECT 0.
+
+# Should the simulated extinction due to grey dust be added to the SN
+# magnitudes (for a SNOC simulated sample).
+#
+GREYDUST 0.
+
+
+# Should the simulated host galaxy extinction be added to
+# the SN magnitudes (for a SNOC simulated sample).
+#
+# This parameter can also be used to correct for host galaxy
+# extinction if Snalys is ran on real data.
+#
+HOSTEXTINCTION 0.
+
+# Should the simulated photon-axion oscillation contribution
+# be added to the SN magnitudes (for a SNOC simluated sample).
+#
+PAMIXING 0.
+
+# Specify which probability density function to assume (see
+# 2003A&A...397..819A)
+#
+PDF GAUSS
+
+# Assume a flat universe
+#
+FLAT 1.
+
+# The minimization methods (do not use DAVIDON, POWELL or GENETIC unless
+# you really know what you are doing).
+#
+DAVIDON 0.
+POWELL 0.
+GENETIC 0.
+GRIDSEARCH 1.
+
+# EOF
+#

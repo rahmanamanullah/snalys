@@ -1,0 +1,4 @@
+0.2
+ - Changed so that it now uses the default value of 1.0 for stretch
+   instead of 0.0.
+ - The Hannestad and Alam parametrizations have been added.

@@ -1,0 +1,4 @@
+drivers.list            (the drivers for which the libs has been compiled)
+grfont.dat              (binary font file)*
+libpgplot.a             (PGPLOT library)*
+rgb.txt                 (color name database)*

@@ -1,0 +1,47 @@
+REQUIREMENTS
+============
+    cfitsio (for optional fits output)
+    pgplot (not really used at the time)
+  For developers:
+    autoconf
+    automake
+
+  * NOTE if you are on physto.se and does not have a local version of
+    autoconf/automake, begin by typing
+
+      source /afs/physto.se/snova/dsk03/software/bin/setup.csh
+
+  
+COMPILE AND INSTALL
+===================
+The easiest way to install the software is to enter directory snoc/snalys
+and type:
+
+  ./configure
+  make
+
+This should produce a binary for your architecture. Currently i386 linux and
+alpha OSF are supported but there is no reason why it will not work on other
+platforms. The only thing you have to do is to compile the pgplot libraries
+(snoc/lib/pgplot*.tar) for that specific architecture. To clean up the
+object files type
+
+  make clean
+
+Before you want to compile the software for a different architecture type
+
+  make distclean
+
+and the type ./configure again. Good luck!
+
+To run the program you also have to specify the environment variable
+PGPLOT_DIR to point at the snoc/snalys/lib directory.
+
+Developers using the CVS version has to type
+
+  source /afs/physto.se/snova/dsk03/software/bin/setup.csh
+  aclocal
+  autoconf
+  automake -a
+
+to create the configure script and the 'Makefile.in' files.

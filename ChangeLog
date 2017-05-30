@@ -1,0 +1,11 @@
+2004-10-08
+  Added some checks to remove parameters from the parameter list if these
+  have been marked for fitting but the model they belong to has not. Also
+  removed the initialization checks for this parameters if they are not
+  to be fitted.
+
+  Changed the structure of the 'example.par' file, and also removed all the
+  files from the CVS that are created by 'automake' and 'autoconf', since
+  it only causes trouble when these files are used with different versions
+  of 'automake' and 'autoconf'.
+
